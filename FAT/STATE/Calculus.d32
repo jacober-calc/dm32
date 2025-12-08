@@ -1,0 +1,36 @@
+# STACK
+
+# REGS
+
+# FLAGS
+
+# SEED
+
+# MODE
+MTRIG: DEG
+MFMT: FIX 6
+FN= J
+
+# EQUATION LIST
+EQNPTR: 0
+EQN
+ X \div; ( \pi; + 0.001 \mul; X ^ 2 )
+ \pi; \mul; ( 0.001 \mul; X ) ^ ( 0.001 \mul; X )
+EQNEND
+
+# PROGRAM
+PTR: 0
+PGM
+  LBL A
+  SF 11
+  EQN: X \div; ( \pi; + 0.01 \mul; X ^ 2 )
+  RTN
+  LBL J
+  SF 11
+  EQN: SIN( \pi; \mul; X ^ 2 \div; D )
+  RTN
+  LBL O
+  SF 11
+  EQN: SIN( \pi; \mul; X ^ 2 \mul; M )
+  RTN
+PGMEND

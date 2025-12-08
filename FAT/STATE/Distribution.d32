@@ -1,0 +1,266 @@
+# STACK
+
+# REGS
+
+# FLAGS
+
+# SEED
+
+# MODE
+MTRIG: DEG
+MFMT: FIX 6
+FN= F
+
+# EQUATION LIST
+EQNPTR: 0
+EQN
+EQNEND
+
+# PROGRAM
+PTR: 0
+PGM
+  0
+  STO P
+  LBL E
+  1
+  x<>y
+  -
+  RTN
+  LBL N
+  CLVARS
+  0
+  STO M
+  INPUT M
+  1
+  STO S
+  INPUT S
+  RTN
+  LBL D
+  INPUT X
+  XEQ Q
+  STO Q
+  VIEW Q
+  RTN
+  LBL I
+  INPUT Q
+  RCL M
+  STO X
+  LBL T
+  XEQ Q
+  RCL- Q
+  RCL X
+  STO D
+  R\down;
+  XEQ F
+  RCL\div; T
+  \div;
+  STO+ X
+  ABS
+  0.001
+  x<y?
+  GTO T
+  RCL X
+  VIEW X
+  GTO I
+  LBL Q
+  RCL M
+  RCL X
+  FN= F
+  \integ;FN d D
+  2
+  \pi;
+  \mul;
+  SQRT
+  RCL\mul; S
+  STO T
+  \div;
+  +/-
+  0.5
+  +
+  RTN
+  LBL F
+  RCL D
+  RCL- M
+  RCL\div; S
+  x\sqr;
+  2
+  \div;
+  +/-
+  e\powx;
+  RTN
+  LBL B
+  CLVARS
+  INPUT N
+  INPUT R
+  INPUT B
+  INPUT A
+  1000
+  \div;
+  STO+ B
+  LBL Y
+  1
+  RCL- R
+  RCL N
+  RCL B
+  IP
+  -
+  y\powx;
+  RCL R
+  RCL B
+  IP
+  y\powx;
+  LASTx
+  RCL N
+  x<>y
+  Cn,r
+  \mul;
+  \mul;
+  FS? 0
+  STOP
+  STO+ P
+  ISG B
+  GTO Y
+  VIEW P
+  RCL N
+  RCL\mul; R
+  STO M
+  1
+  RCL- R
+  \mul;
+  STO V
+  SQRT
+  STO S
+  VIEW M
+  VIEW V
+  VIEW S
+  RTN
+  LBL P
+  CLVARS
+  INPUT L
+  INPUT B
+  INPUT A
+  1000
+  \div;
+  STO+ B
+  LBL X
+  RCL L
+  RCL B
+  IP
+  y\powx;
+  LASTx
+  x!
+  \div;
+  RCL L
+  +/-
+  e\powx;
+  \mul;
+  FS? 0
+  STOP
+  STO+ P
+  ISG B
+  GTO X
+  RCL L
+  STO M
+  STO V
+  SQRT
+  STO S
+  CLx
+  ENTER
+  RCL M
+  RCL S
+  RCL P
+  RTN
+  LBL C
+  INPUT N
+  INPUT S
+  INPUT P
+  RCL N
+  1/x
+  LASTx
+  1
+  -
+  \mul;
+  RCL S
+  x\sqr;
+  LASTx
+  -
+  2
+  \div;
+  y\powx;
+  1
+  x<>y
+  -
+  x!
+  x=0?
+  GTO Z
+  RCL S
+  +/-
+  RCL S
+  1
+  -
+  \mul;
+  4
+  \div;
+  RCL\div; N
+  ENTER
+  SINH
+  x<>y
+  e\powx;
+  \mul;
+  2
+  \mul;
+  +/-
+  LBL Z
+  RCL- P
+  RTN
+  LBL G
+  INPUT M
+  INPUT S
+  INPUT X
+  RCL X
+  RCL M
+  -
+  x\sqr;
+  RCL S
+  x\sqr;
+  2
+  \mul;
+  \div;
+  +/-
+  e\powx;
+  RCL S
+  2
+  \pi;
+  \mul;
+  SQRT
+  \mul;
+  1/x
+  \mul;
+  STO P
+  CLx
+  ENTER
+  ENTER
+  ENTER
+  RCL P
+  RTN
+  LBL L
+  INPUT L
+  INPUT X
+  RCL L
+  +/-
+  e\powx;
+  STO P
+  RCL L
+  RCL X
+  y\powx;
+  STO\mul; P
+  RCL X
+  x!
+  STO\div; P
+  CLx
+  ENTER
+  RCL L
+  RCL X
+  RCL P
+  RTN
+PGMEND

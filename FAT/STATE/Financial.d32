@@ -1,0 +1,72 @@
+# STACK
+
+# REGS
+
+# FLAGS
+
+# SEED
+
+# MODE
+MTRIG: DEG
+MFMT: FIX 6
+FN= M
+
+# EQUATION LIST
+EQNPTR: 0
+EQN
+ P \mul; 100 \mul; ( 1 - ( 1 + I \div; 100 ) ^ - N ) \div; I + F \mul; ( 1 + I \div; 100 ) ^ - N + B
+ P \mul; ( ( 1 + ( I \div; 100 ) \div; N ) ^ N - 1 ) \div; ( ( I \div; 100 ) \div; N )
+EQNEND
+
+# PROGRAM
+PTR: 0
+PGM
+  LBL H
+  STO E
+  \rarr;HR
+  R\down;
+  STO S
+  \rarr;HR
+  R\up;
+  x<>y
+  -
+  STO T
+  \rarr;HMS
+  STO T
+  RTN
+  LBL P
+  32.05
+  \mul;
+  RTN
+  LBL E
+  SF 11
+  EQN: ( ( 1 + ( I \div; 100 ) \div; N ) ^ N - 1 ) \mul; 100
+  RTN
+  LBL S
+  STO A
+  0.05
+  \mul;
+  STO G
+  RCL A
+  0.07
+  \mul;
+  STO P
+  RCL A
+  +
+  +
+  STO B
+  RCL G
+  RCL P
+  RCL A
+  RCL B
+  RTN
+  LBL M
+  SF 11
+  EQN: ( P \mul; 100 \mul; Y \div; I - F ) \mul; ( 1 + I \div; Y \div; 100 ) ^ - N - P \mul; 100 \mul; Y \div; I - B
+  RTN
+  LBL L
+  %CHG
+  100
+  +
+  RTN
+PGMEND

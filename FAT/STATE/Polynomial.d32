@@ -1,0 +1,71 @@
+# STACK
+
+# REGS
+
+# FLAGS
+
+# SEED
+
+# MODE
+MTRIG: DEG
+MFMT: FIX 6
+
+# EQUATION LIST
+EQNPTR: 0
+EQN
+EQNEND
+
+# PROGRAM
+PTR: 0
+PGM
+  LBL P
+  INPUT A
+  INPUT B
+  INPUT C
+  RCL B
+  x\sqr;
+  4
+  RCL A
+  RCL C
+  \mul;
+  \mul;
+  -
+  STO i
+  x<0?
+  GTO A
+  RCL B
+  +/-
+  RCL i
+  SQRT
+  +
+  2
+  RCL\mul; A
+  \div;
+  STO U
+  RCL B
+  +/-
+  RCL i
+  SQRT
+  -
+  2
+  RCL\mul; A
+  \div;
+  STO L
+  CLx
+  ENTER
+  RCL i
+  RCL U
+  RCL L
+  RTN
+  LBL A
+  CLx
+  ENTER
+  ENTER
+  RCL B
+  +/-
+  RCL i
+  VIEW i
+  2
+  RCL\mul; A
+  RTN
+PGMEND

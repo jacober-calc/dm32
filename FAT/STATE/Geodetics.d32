@@ -1,0 +1,307 @@
+# STACK
+
+# REGS
+
+# FLAGS
+
+# SEED
+
+# MODE
+MTRIG: DEG
+MFMT: FIX 6
+
+# EQUATION LIST
+EQNPTR: 0
+EQN
+EQNEND
+
+# PROGRAM
+PTR: 0
+PGM
+  LBL B
+  x<>y
+  90
+  x<>y
+  -
+  x<>y
+  \theta;,r\rarr;y,x
+  RTN
+  LBL C
+  INPUT S
+  INPUT B
+  INPUT R
+  INPUT C
+  INPUT V
+  XEQ Z
+  RCL R
+  RCL B
+  SIN
+  \mul;
+  STO D
+  RCL R
+  RCL B
+  COS
+  \mul;
+  STO E
+  RCL V
+  RCL C
+  SIN
+  \mul;
+  STO L
+  RCL V
+  RCL C
+  COS
+  \mul;
+  STO M
+  RCL L
+  STO N
+  RCL M
+  RCL S
+  -
+  STO O
+  RCL D
+  RCL N
+  \mul;
+  RCL E
+  RCL O
+  \mul;
+  +
+  +/-
+  RCL N
+  x\sqr;
+  RCL O
+  x\sqr;
+  +
+  \div;
+  STO Z
+  RCL D
+  RCL N
+  RCL Z
+  \mul;
+  +
+  STO I
+  RCL E
+  RCL O
+  RCL Z
+  \mul;
+  +
+  STO J
+  x\le;0?
+  XEQ X
+  RCL I
+  x\sqr;
+  RCL J
+  x\sqr;
+  +
+  SQRT
+  STO X
+  RCL I
+  RCL J
+  y,x\rarr;\theta;,r
+  R\down;
+  STO Y
+  RCL Z
+  60
+  \mul;
+  STO Z
+  XEQ Y
+  CLx
+  ENTER
+  RCL X
+  RCL Y
+  RCL Z
+  RTN
+  LBL X
+  1E-999
+  +
+  STO J
+  RTN
+  LBL Y
+  180
+  RCL Y
+  x<y?
+  RTN
+  360
+  -
+  STO Y
+  RTN
+  LBL Z
+  RCL B
+  x>0?
+  RTN
+  360
+  +
+  STO B
+  RTN
+  LBL D
+  STO B
+  R\down;
+  STO A
+  R\down;
+  STO Y
+  R\down;
+  STO X
+  RCL A
+  -
+  x\sqr;
+  RCL Y
+  RCL B
+  -
+  x\sqr;
+  +
+  STO D
+  CLx
+  ENTER
+  ENTER
+  ENTER
+  RCL D
+  RTN
+  LBL L
+  CLx
+  82.5018
+  42.3149
+  48.4284
+  INPUT L
+  298.257223563
+  1/x
+  STO F
+  6378137
+  STO E
+  RCL L
+  SIN
+  RCL L
+  SIN
+  \mul;
+  RCL F
+  \mul;
+  1
+  x<>y
+  -
+  RCL E
+  \mul;
+  1000
+  \div;
+  STO X
+  RCL L
+  COS
+  \mul;
+  STO R
+  \pi;
+  2
+  \mul;
+  \mul;
+  STO C
+  23.934472
+  \div;
+  STO V
+  RCL C
+  RCL X
+  RCL R
+  RCL V
+  RTN
+  LBL P
+  DEG
+  INPUT V
+  INPUT A
+  9.80665
+  STO G
+  RCL V
+  RCL A
+  SIN
+  \mul;
+  x\sqr;
+  2
+  \div;
+  RCL\div; G
+  STO H
+  RCL A
+  2
+  \mul;
+  SIN
+  RCL V
+  ENTER
+  \mul;
+  \mul;
+  RCL\div; G
+  STO D
+  2
+  RCL V
+  RCL A
+  SIN
+  \mul;
+  \mul;
+  RCL G
+  \div;
+  STO T
+  0
+  RCL H
+  RCL D
+  RCL T
+  RTN
+  LBL G
+  1.48
+  STO S
+  INPUT V
+  INPUT A
+  INPUT S
+  RCL V
+  RCL S
+  \mul;
+  STO B
+  2
+  RCL A
+  \mul;
+  SIN
+  RCL B
+  x\sqr;
+  \mul;
+  9.80665
+  \div;
+  STO D
+  RCL B
+  RCL A
+  SIN
+  \mul;
+  x\sqr;
+  2
+  9.80665
+  \mul;
+  \div;
+  STO H
+  CLx
+  ENTER
+  RCL B
+  RCL H
+  RCL D
+  RTN
+  LBL H
+  STO H
+  XEQ L
+  RCL X
+  1000
+  \mul;
+  STO R
+  2
+  \mul;
+  RCL H
+  \mul;
+  RCL H
+  x\sqr;
+  +
+  SQRT
+  STO D
+  RCL R
+  2
+  \pi;
+  \mul;
+  \mul;
+  \div;
+  100
+  \mul;
+  STO P
+  RCL L
+  RCL H
+  RCL P
+  RCL D
+  RTN
+PGMEND

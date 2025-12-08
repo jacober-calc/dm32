@@ -1,0 +1,48 @@
+# STACK
+
+# REGS
+
+# FLAGS
+
+# SEED
+
+# MODE
+MTRIG: DEG
+MFMT: FIX 6
+FN= O
+
+# EQUATION LIST
+EQNPTR: 0
+EQN
+ V = SQRT( P \mul; R )
+ V = P \div; I
+ V = I \mul; R
+ R = V \div; I
+ R = V ^ 2 \div; I
+ R = P \div; I ^ 2
+ P = V ^ 2 \div; R
+ P = I ^ 2 \mul; R
+ P = V \mul; I
+ I = V \div; R
+ I = P \div; V
+ I = SQRT( P \div; R )
+EQNEND
+
+# PROGRAM
+PTR: 0
+PGM
+  LBL A
+  RCL V
+  RCL I
+  \mul;
+  STO P
+  RCL V
+  RCL I
+  RCL R
+  RCL P
+  RTN
+  LBL O
+  SF 11
+  EQN: V - I \mul; R
+  RTN
+PGMEND
