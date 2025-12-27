@@ -10,7 +10,7 @@ Live snapshot of my own SwissMicros DM32 FAT drive. Updated as the calculator st
 └── README.md     # Repo information
 ```
 
-Current Release version: [rel1-neonardo](https://github.com/jacober-calc/dm32/releases/tag/rel2-wayfinder)
+Current Release version: [rel2-wayfinder](https://github.com/jacober-calc/dm32/releases/tag/rel2-wayfinder)
 
 Current Firmware: [DMCP5_flash_3.56_DM32-2.11](https://technical.swissmicros.com/dm32/firmware/)
 
