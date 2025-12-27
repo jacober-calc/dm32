@@ -9,6 +9,7 @@
 # MODE
 MTRIG: DEG
 MFMT: FIX 6
+FN= L
 
 # EQUATION LIST
 EQNPTR: 0
@@ -18,121 +19,6 @@ EQNEND
 # PROGRAM
 PTR: 0
 PGM
-  LBL B
-  x<>y
-  90
-  x<>y
-  -
-  x<>y
-  \theta;,r\rarr;y,x
-  RTN
-  LBL C
-  INPUT S
-  INPUT B
-  INPUT R
-  INPUT C
-  INPUT V
-  XEQ Z
-  RCL R
-  RCL B
-  SIN
-  \mul;
-  STO D
-  RCL R
-  RCL B
-  COS
-  \mul;
-  STO E
-  RCL V
-  RCL C
-  SIN
-  \mul;
-  STO L
-  RCL V
-  RCL C
-  COS
-  \mul;
-  STO M
-  RCL L
-  STO N
-  RCL M
-  RCL S
-  -
-  STO O
-  RCL D
-  RCL N
-  \mul;
-  RCL E
-  RCL O
-  \mul;
-  +
-  +/-
-  RCL N
-  x\sqr;
-  RCL O
-  x\sqr;
-  +
-  \div;
-  STO Z
-  RCL D
-  RCL N
-  RCL Z
-  \mul;
-  +
-  STO I
-  RCL E
-  RCL O
-  RCL Z
-  \mul;
-  +
-  STO J
-  x\le;0?
-  XEQ X
-  RCL I
-  x\sqr;
-  RCL J
-  x\sqr;
-  +
-  SQRT
-  STO X
-  RCL I
-  RCL J
-  y,x\rarr;\theta;,r
-  R\down;
-  STO Y
-  RCL Z
-  60
-  \mul;
-  STO Z
-  XEQ Y
-  CLx
-  ENTER
-  RCL X
-  RCL Y
-  RCL Z
-  RTN
-  LBL X
-  1E-999
-  +
-  STO J
-  RTN
-  LBL Y
-  180
-  RCL Y
-  x<y?
-  RTN
-  360
-  -
-  STO Y
-  RTN
-  LBL Z
-  RCL B
-  x>0?
-  RTN
-  360
-  +
-  STO B
-  RTN
   LBL D
   STO B
   R\down;

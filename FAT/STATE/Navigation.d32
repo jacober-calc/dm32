@@ -1,0 +1,266 @@
+# STACK
+
+# REGS
+
+# FLAGS
+
+# SEED
+
+# MODE
+MTRIG: DEG
+MFMT: FIX 6
+FN= S
+
+# EQUATION LIST
+EQNPTR: 0
+EQN
+EQNEND
+
+# PROGRAM
+PTR: 0
+PGM
+  LBL B
+  x<>y
+  90
+  x<>y
+  -
+  x<>y
+  \theta;,r\rarr;y,x
+  RTN
+  LBL C
+  INPUT S
+  INPUT B
+  INPUT R
+  INPUT C
+  INPUT V
+  XEQ Z
+  RCL R
+  RCL B
+  SIN
+  \mul;
+  STO D
+  RCL R
+  RCL B
+  COS
+  \mul;
+  STO E
+  RCL V
+  RCL C
+  SIN
+  \mul;
+  STO L
+  RCL V
+  RCL C
+  COS
+  \mul;
+  STO M
+  RCL L
+  STO N
+  RCL M
+  RCL S
+  -
+  STO O
+  RCL D
+  RCL N
+  \mul;
+  RCL E
+  RCL O
+  \mul;
+  +
+  +/-
+  RCL N
+  x\sqr;
+  RCL O
+  x\sqr;
+  +
+  \div;
+  STO Z
+  RCL D
+  RCL N
+  RCL Z
+  \mul;
+  +
+  STO I
+  RCL E
+  RCL O
+  RCL Z
+  \mul;
+  +
+  STO J
+  x\le;0?
+  XEQ X
+  RCL I
+  x\sqr;
+  RCL J
+  x\sqr;
+  +
+  SQRT
+  STO X
+  RCL I
+  RCL J
+  y,x\rarr;\theta;,r
+  R\down;
+  STO Y
+  RCL Z
+  60
+  \mul;
+  STO Z
+  XEQ Y
+  CLx
+  ENTER
+  RCL X
+  RCL Y
+  RCL Z
+  RTN
+  LBL X
+  1E-999
+  +
+  STO J
+  RTN
+  LBL Y
+  180
+  RCL Y
+  x<y?
+  RTN
+  360
+  -
+  STO Y
+  RTN
+  LBL Z
+  RCL B
+  x>0?
+  RTN
+  360
+  +
+  STO B
+  RTN
+  LBL S
+  DEG
+  48.43
+  INPUT N
+  -123.37
+  INPUT E
+  INPUT D
+  INPUT T
+  INPUT U
+  RCL N
+  RCL E
+  RCL D
+  RCL T
+  RCL U
+  +
+  STO S
+  24
+  \div;
+  +
+  STO Z
+  15.218425
+  \div;
+  RCL+ S
+  15
+  \mul;
+  RCL+ E
+  98.92477
+  +
+  STO S
+  -3.93
+  RCL+ Z
+  1.01461
+  \div;
+  ENTER
+  ENTER
+  0.016711
+  STO X
+  x\sqr;
+  1
+  -
+  x<>y
+  COS
+  RCL\mul; X
+  1
+  -
+  \div;
+  \theta;,r\rarr;y,x
+  RCL- X
+  RCL- X
+  y,x\rarr;\theta;,r
+  R\down;
+  77.2
+  -
+  4.647E-5
+  RCL\mul; Z
+  +
+  1
+  \theta;,r\rarr;y,x
+  x<>y
+  66.5
+  x<>y
+  \theta;,r\rarr;y,x
+  STO Z
+  R\down;
+  x<>y
+  y,x\rarr;\theta;,r
+  x<>y
+  RCL- S
+  x<>y
+  \theta;,r\rarr;y,x
+  RCL Z
+  x<>y
+  y,x\rarr;\theta;,r
+  x<>y
+  RCL- N
+  x<>y
+  \theta;,r\rarr;y,x
+  STO Z
+  R\down;
+  +/-
+  y,x\rarr;\theta;,r
+  R\down;
+  180
+  x<>y
+  -
+  RCL Z
+  ASIN
+  RTN
+  LBL D
+  12.311991
+  x<>y
+  XEQ N:CHRONOLOGY
+  STO D
+  5
+  8
+  INPUT U
+  RTN
+  LBL G
+  DEG
+  INPUT N
+  STO X
+  INPUT E
+  INPUT N
+  1
+  \theta;,r\rarr;y,x
+  INPUT E
+  R\up;
+  -
+  x<>y
+  \theta;,r\rarr;y,x
+  R\up;
+  x<>y
+  y,x\rarr;\theta;,r
+  x<>y
+  RCL- X
+  x<>y
+  \theta;,r\rarr;y,x
+  180
+  R\down;
+  R\down;
+  +/-
+  y,x\rarr;\theta;,r
+  R\down;
+  -
+  x<>y
+  ACOS
+  60
+  \mul;
+  RTN
+PGMEND

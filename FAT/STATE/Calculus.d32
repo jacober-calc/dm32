@@ -9,7 +9,7 @@
 # MODE
 MTRIG: DEG
 MFMT: FIX 6
-FN= J
+FN= A
 
 # EQUATION LIST
 EQNPTR: 0
@@ -23,7 +23,7 @@ PTR: 0
 PGM
   LBL A
   SF 11
-  EQN: X \div; ( \pi; + 0.01 \mul; X ^ 2 )
+  EQN: SIN( \pi; \mul; X ^ 2 \div; 2 )
   RTN
   LBL J
   SF 11
